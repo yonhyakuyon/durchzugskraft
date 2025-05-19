@@ -1,0 +1,1193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+:root {
+    /* BMW Brand Colors */
+    --bmw-blue: #0066B1;
+    --bmw-dark-blue: #003865;
+    --bmw-light-blue: #6BA4D9;
+    --bmw-white: #FFFFFF;
+    --bmw-black: #000000;
+    --bmw-gray: #F5F5F5;
+    --bmw-dark-gray: #333333;
+    --bmw-accent: #E4002B;
+    /* For important actions */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bmw-gray);
+    color: var(--bmw-dark-gray);
+}
+
+/* ========== Top Navigation ========== */
+.topnav {
+    background-color: var(--bmw-black);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.topnav a {
+    color: var(--bmw-white);
+    text-align: center;
+    padding: 20px 25px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.topnav a:hover {
+    background-color: var(--bmw-blue);
+    color: var(--bmw-white);
+}
+
+.topnav a.active {
+    background-color: var(--bmw-blue);
+    color: var(--bmw-white);
+    font-weight: 600;
+}
+
+/* ========== Product Cards ========== */
+.cart {
+    position: relative;
+    background-color: var(--bmw-white);
+    width: 380px;
+    height: 480px;
+    margin: 20px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    float: left;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.cart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cart .name {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px 0 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--bmw-dark-blue);
+}
+
+.cart .price {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--bmw-blue);
+    margin-bottom: 20px;
+}
+
+.cart .add-to-cart {
+    border: none;
+    margin: 0 auto;
+    padding: 12px 30px;
+    background-color: var(--bmw-blue);
+    color: var(--bmw-white);
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 102, 177, 0.2);
+}
+
+.cart .add-to-cart:hover {
+    background-color: var(--bmw-dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 102, 177, 0.3);
+}
+
+.main-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    margin: 20px auto;
+    transition: transform 0.3s ease;
+}
+
+.main-image:hover {
+    transform: scale(1.05);
+}
+
+/* ========== Product Detail Page ========== */
+.product-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: var(--bmw-white);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.6s ease-out;
+}
+
+.prod-img-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bmw-gray);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.prod-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.prod-img:hover {
+    transform: scale(1.03);
+}
+
+.prod-name {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--bmw-dark-blue);
+    margin-bottom: 15px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.prod-description {
+    color: var(--bmw-dark-gray);
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    padding-right: 20px;
+}
+
+.prod-price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--bmw-blue);
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.price-old {
+    font-size: 1.5rem;
+    color: var(--bmw-dark-gray);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.btn-cont {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--bmw-blue);
+    color: var(--bmw-white);
+    border: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 102, 177, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background: var(--bmw-dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 102, 177, 0.3);
+}
+
+.btn-secondary {
+    background: var(--bmw-white);
+    color: var(--bmw-blue);
+    border: 2px solid var(--bmw-blue);
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-secondary:hover {
+    background: var(--bmw-light-blue);
+    color: var(--bmw-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Cart & Order Styles ========== */
+.result-order-container {
+    font-family: 'Poppins', sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--bmw-white);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.result-order-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--bmw-dark-blue);
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--bmw-blue);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.result-order {
+    background: var(--bmw-gray);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-label {
+    font-weight: 600;
+    color: var(--bmw-dark-blue);
+    min-width: 150px;
+    font-size: 1.1rem;
+}
+
+.item-value {
+    color: var(--bmw-dark-gray);
+    text-align: right;
+    flex-grow: 1;
+    font-size: 1.1rem;
+}
+
+.total-sum {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--bmw-blue);
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 3px dashed var(--bmw-light-blue);
+    text-align: right;
+}
+
+/* ========== Buttons & Links ========== */
+.link-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 35px 0;
+    flex-wrap: wrap;
+}
+
+.action-link {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-align: center;
+    min-width: 220px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.back-link {
+    background-color: var(--bmw-white);
+    color: var(--bmw-blue);
+    border: 2px solid var(--bmw-blue);
+}
+
+.back-link:hover {
+    background-color: var(--bmw-light-blue);
+    color: var(--bmw-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account-link {
+    background-color: var(--bmw-blue);
+    color: var(--bmw-white);
+    border: 2px solid var(--bmw-blue);
+}
+
+.account-link:hover {
+    background-color: var(--bmw-dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(51, 154, 240, 0.2);
+}
+
+/* ========== Unified Button Styles ========== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
+    min-width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+}
+
+/* Primary Button (Blue) */
+.btn-primary {
+    background-color: var(--bmw-blue);
+    color: var(--bmw-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--bmw-dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 102, 177, 0.3);
+}
+
+/* Secondary Button (White with Blue border) */
+.btn-secondary {
+    background-color: var(--bmw-white);
+    color: var(--bmw-blue);
+    border-color: var(--bmw-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bmw-light-blue);
+    color: var(--bmw-white);
+    transform: translateY(-2px);
+}
+
+/* Accent Button (Red for important actions) */
+.btn-accent {
+    background-color: var(--bmw-accent);
+    color: var(--bmw-white);
+}
+
+.btn-accent:hover {
+    background-color: #C10024;
+    transform: translateY(-2px);
+}
+
+/* Disabled State */
+.btn:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Button Sizes */
+.btn-sm {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    min-width: 160px;
+}
+
+.btn-lg {
+    padding: 18px 36px;
+    font-size: 1.2rem;
+    min-width: 240px;
+}
+
+/* Button with Icon */
+.btn-icon {
+    gap: 10px;
+}
+
+.btn-icon i {
+    font-size: 1.2em;
+}
+
+/* ========== Specific Button Implementations ========== */
+/* Add to Cart Button */
+.add-to-cart {
+    composes: btn;
+    composes: btn-primary;
+    margin: 15px auto;
+    width: 100%;
+}
+
+/* Form Submit Button */
+button[type="submit"] {
+    composes: btn;
+    composes: btn-primary;
+}
+
+/* Link Buttons */
+.action-link {
+    composes: btn;
+    composes: btn-secondary;
+    text-decoration: none;
+}
+
+/* Quick Order Button */
+.quick-order {
+    composes: btn;
+    composes: btn-accent;
+}
+
+/* Back Button */
+.back-btn {
+    composes: btn;
+    composes: btn-secondary;
+}
+
+/* ========== Button Container ========== */
+.btn-cont {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .btn-cont {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* ========== Animations ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 1024px) {
+    .product-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .prod-img-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart {
+        width: 100%;
+        margin: 15px 0;
+        height: auto;
+    }
+
+    .topnav a {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .prod-name {
+        font-size: 2rem;
+    }
+
+    .prod-price {
+        font-size: 1.8rem;
+    }
+
+    .btn-cont {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-container {
+        padding: 20px;
+    }
+
+    .prod-img-container {
+        height: 300px;
+    }
+
+    .prod-name {
+        font-size: 1.6rem;
+    }
+
+    .result-order-container {
+        padding: 20px;
+    }
+
+    .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item-value {
+        text-align: left;
+        margin-top: 5px;
+    }
+
+    .action-link {
+        width: 100%;
+    }
+}
+
+/* ========== Utility Classes ========== */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--bmw-blue);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-weight: 500;
+}
+
+.show-products::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Стиль для изображений продуктов с фиксированным размером 720x480 */
+.product-image {
+    width: 720px;
+    height: 480px;
+    object-fit: contain;
+    /* или cover, в зависимости от потребностей */
+    display: block;
+    margin: 0 auto;
+    background-color: var(--bmw-gray);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.02);
+}
+
+/* Стиль для кнопки добавления в корзину на странице продукта */
+.product-add-to-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    background-color: var(--bmw-blue);
+    color: var(--bmw-white);
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 102, 177, 0.2);
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.product-add-to-cart:hover {
+    background-color: var(--bmw-dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 102, 177, 0.3);
+}
+
+/* Стиль для иконки (если используется) */
+.product-add-to-cart i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .product-add-to-cart {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Контейнер для изображения (опционально) */
+.product-image-container {
+    width: 720px;
+    height: 480px;
+    margin: 0 auto;
+    padding: 10px;
+    background: var(--bmw-white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+
+    .product-image,
+    .product-image-container {
+        width: 100%;
+        height: auto;
+        max-width: 720px;
+        aspect-ratio: 720/480;
+        /* Сохраняем пропорции 3:2 */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-image {
+        border-radius: 6px;
+    }
+
+    .product-image-container {
+        padding: 5px;
+    }
+}
+
+.main-cart img {
+    width: 80px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.categories {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 50px 0;
+    color: var(--bmw-dark-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.auth-and-reg {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bmw-gray);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background: var(--bmw-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+input {
+    margin: 15px 0;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid var(--bmw-light-blue);
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+button[type="submit"] {
+    padding: 14px;
+    background: var(--bmw-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: var(--bmw-dark-blue);
+}
+
+.auth-title {
+    margin: 0 0 30px;
+    text-align: center;
+    color: var(--bmw-dark-blue);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+a {
+    color: var(--bmw-blue);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--bmw-dark-blue);
+    text-decoration: underline;
+}
+
+/* Mini Cart */
+.mini-cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--bmw-white);
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.mini-cart:hover {
+    transform: scale(1.1);
+    background: var(--bmw-blue);
+}
+
+.mini-cart:hover .go-to-cart {
+    filter: brightness(0) invert(1);
+}
+
+.go-to-cart {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+
+/* Center alignment helpers */
+.check-order,
+.main-cart,
+.make-order,
+.container-pa,
+#pa-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.main-cart {
+    font-size: 2rem;
+    color: var(--bmw-dark-blue);
+    margin: 30px 0;
+}
+
+/* Стиль для кнопки оформления заказа */
+.make-order {
+    display: block;
+    /* Чтобы margin: auto работал */
+    margin: 30px auto;
+    /* Центрирование по горизонтали */
+    padding: 12px 30px;
+    background-color: var(--bmw-blue);
+    color: var(--bmw-white);
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 102, 177, 0.2);
+    text-transform: uppercase;
+    text-align: center;
+    width: fit-content;
+    /* Ширина по содержимому */
+}
+
+.make-order:hover {
+    background-color: var(--bmw-dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 102, 177, 0.3);
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .make-order {
+        width: 100%;
+        max-width: 300px;
+        padding: 14px 20px;
+    }
+}
+
+.order-img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+/* ====== Orders List======= */
+/* Стили для таблицы заказов */
+/* Стили для списка заказов */
+.orders-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.orders-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #0066B1;
+    /* BMW синий */
+    font-weight: 600;
+}
+
+.order-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.order-number {
+    font-weight: 600;
+    color: #0066B1;
+    /* BMW синий */
+}
+
+.order-date {
+    color: #666;
+}
+
+.order-items {
+    padding: 15px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.product-image-container {
+    width: 360px;
+    height: 144px;
+    flex-shrink: 0;
+    margin-right: 20px;
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.order-product-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.product-info {
+    flex-grow: 1;
+}
+
+.product-title {
+    font-weight: 500;
+    color: #0066B1;
+    /* BMW синий */
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.product-title:hover {
+    text-decoration: underline;
+}
+
+.product-price {
+    color: #666;
+    font-size: 14px;
+}
+
+.product-total {
+    font-weight: 600;
+    min-width: 100px;
+    text-align: right;
+}
+
+.order-footer {
+    padding: 15px 20px;
+    background: #f9f9f9;
+    text-align: right;
+    border-top: 1px solid #e0e0e0;
+}
+
+.order-total {
+    color: forestgreen;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.cart-counter-badge {
+    display: inline-block;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    margin-left: 5px;
+    min-width: 18px;
+    text-align: center;
+    line-height: 1;
+}
+
+.cart-counter-badge.empty {
+    display: none;
+}
+
+/* ========== About Page Custom Styles ========== */
+.about-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: var(--bmw-white);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.about-img-block {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bmw-gray);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.about-main-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--bmw-dark-blue);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.about-feature-card {
+    border-left: 4px solid var(--bmw-blue);
+    padding-left: 25px;
+    margin: 30px 0;
+}
+
+.about-feature-list li {
+    padding: 8px 0;
+    font-size: 1.05rem;
+    color: var(--bmw-dark-gray);
+}
+
+.about-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    background: var(--bmw-gray);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 35px 0;
+}
+
+.about-stat-item {
+    text-align: center;
+    padding: 15px;
+    background: var(--bmw-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.about-team-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 60px auto;
+    padding: 40px;
+    background: var(--bmw-white);
+}
+
+.about-certificate-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    background: var(--bmw-white);
+    border: 2px solid var(--bmw-blue);
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.about-certificate-btn img {
+    width: 22px;
+    margin-right: 12px;
+    filter: invert(24%) sepia(98%) saturate(1552%) hue-rotate(183deg) brightness(93%) contrast(101%);
+}
+
+.about-counter-block {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.about-counter-number {
+    font-size: 2.4rem;
+    color: var(--bmw-blue);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* ========== Responsive Adjustments ========== */
+@media (max-width: 1024px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-img-block {
+        height: 400px;
+    }
+
+    .about-main-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 25px;
+        margin: 30px auto;
+    }
+
+    .about-img-block {
+        height: 300px;
+    }
+
+    .about-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-team-section {
+        padding: 25px;
+    }
+
+    .about-counter-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-main-title {
+        font-size: 1.8rem;
+    }
+
+    .about-feature-card {
+        padding-left: 15px;
+    }
+
+    .about-certificate-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* Footer */
+.about-corporate-footer {
+    text-align: center;
+    padding: 15px 20px;
+    background: var(--bmw-dark-blue);
+    color: var(--bmw-white);
+    margin-top: auto;
+    flex-shrink: 0;
+}
