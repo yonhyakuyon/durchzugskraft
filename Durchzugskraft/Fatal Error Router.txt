@@ -1,2 +1,0 @@
-
-Fatal error: Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class SiteController does not have a method "actionIndexpsite" in C:\OSPanel\domains\Durchzugskraft\components\Router.php:79 Stack trace: #0 C:\OSPanel\domains\Durchzugskraft\index.php(22): Router->run() #1 {main} thrown in C:\OSPanel\domains\Durchzugskraft\components\Router.php on line 79
